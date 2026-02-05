@@ -20,20 +20,20 @@
 
   .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 photos per row */
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr); /* desktop */
+  gap: 30px;
   max-width: 900px;
   margin: auto;
 }
 
   .photo {
-    width: 100%;
-    height: 220px;          /* SAME HEIGHT */
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease;
-  }
+  width: 100%;
+  aspect-ratio: 3 / 4;   /* keeps photos proportional */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
+}
 
   .photo img {
     width: 100%;
@@ -50,6 +50,37 @@
     font-size: 20px;
     color: #4a0033;
   }
+  /* Tablets */
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  #heading {
+    font-size: 26px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr; /* 1 photo per row */
+    gap: 18px;
+  }
+
+  .photo {
+    border-radius: 14px;
+  }
+
+  .note {
+    font-size: 18px;
+  }
+}
 </style>
 
 </head>
